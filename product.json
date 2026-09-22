@@ -1,0 +1,62 @@
+{
+  "name": "WhatsApp Bulk Registration Check",
+  "brand": "WA Lookup",
+  "repository": "walookup/whatsapp-bulk-registration-api",
+  "description": "Upload a whole file of numbers, find out which ones are registered on WhatsApp, and download the result file when it finishes.",
+  "official_site": "https://walookup.com",
+  "landing_page": "https://walookup.com/products/ws_batch",
+  "canonical_docs": "https://walookup.com/api-docs",
+  "base_url": "https://walookup.com",
+  "auth": {
+    "type": "api_key",
+    "header": "X-API-Key"
+  },
+  "mode": "async-bulk",
+  "product": "ws_batch",
+  "identifier_kind": "phone",
+  "requires_country": true,
+  "endpoints": {
+    "submit": {
+      "method": "POST",
+      "path": "/api/v1/bulk-tasks"
+    },
+    "status": {
+      "method": "GET",
+      "path": "/api/v1/bulk-tasks/{id}"
+    },
+    "balance": {
+      "method": "GET",
+      "path": "/api/v1/balance"
+    }
+  },
+  "limits": {
+    "min_items": 1000,
+    "max_items": 100000,
+    "poll_interval_seconds": 30,
+    "file_formats": [
+      "txt",
+      "csv"
+    ]
+  },
+  "result_fields": [
+    {
+      "name": "number",
+      "example": "17253100591",
+      "description": "The submitted number, exactly as it appeared in your file."
+    },
+    {
+      "name": "activated",
+      "example": "yes",
+      "description": "Whether the number is registered on WhatsApp."
+    }
+  ],
+  "statuses": [
+    "processing",
+    "success",
+    "failed"
+  ],
+  "pricing_url": "https://walookup.com/pricing",
+  "maintainer": "WA Lookup",
+  "license": "MIT",
+  "last_reviewed": "2026-09-22"
+}
