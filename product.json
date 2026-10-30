@@ -1,5 +1,5 @@
 {
-  "name": "WhatsApp Bulk Registration Check",
+  "name": "WhatsApp bulk registration check",
   "brand": "WA Lookup",
   "repository": "walookup/whatsapp-bulk-registration-api",
   "description": "Upload a whole file of numbers, find out which ones are registered on WhatsApp, and download the result file when it finishes.",
@@ -31,7 +31,7 @@
   },
   "limits": {
     "min_items": 1000,
-    "max_items": 100000,
+    "max_items": 500000,
     "poll_interval_seconds": 30,
     "file_formats": [
       "txt",
@@ -40,14 +40,14 @@
   },
   "result_fields": [
     {
-      "name": "number",
-      "example": "17253100591",
-      "description": "The submitted number, exactly as it appeared in your file."
+      "name": "identifier",
+      "example": "12345678900",
+      "description": "Submitted identifier, used to join the result to the input. Phone identifiers include their country code."
     },
     {
       "name": "activated",
-      "example": "yes",
-      "description": "Whether the number is registered on WhatsApp."
+      "example": "true",
+      "description": "The determined positive/negative signal for this product; interpret it in the product context."
     }
   ],
   "statuses": [
@@ -58,5 +58,5 @@
   "pricing_url": "https://walookup.com/pricing",
   "maintainer": "WA Lookup",
   "license": "MIT",
-  "last_reviewed": "2026-09-22"
+  "last_reviewed": "2026-10-30"
 }
